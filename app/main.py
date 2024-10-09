@@ -7,7 +7,7 @@ from transformers import BertTokenizer, BertForSequenceClassification
 app = FastAPI()
 
 # Load the tokenizer and the model with pre-trained weights
-model_path = 'C:/Users/felic/Desktop/expeditus/best_bert_model.pth'
+model_path = 'best_bert_model.pth'
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=3)
 model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 model.eval()  # Set the model to evaluation mode
